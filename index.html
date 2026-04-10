@@ -421,7 +421,6 @@
   .option-name { font-weight: 600; font-size: 0.9rem; }
   .option-sub { font-size: 0.7rem; color: var(--text-muted); }
   .option-price { font-weight: 700; color: var(--sage); font-size: 1rem; }
-  .option-unit { font-size: 0.7rem; color: var(--gold); font-weight: 500; margin-left: 6px; }
   .palmida-btn {
     width: 100%;
     background: var(--sage);
@@ -580,7 +579,7 @@
   }
   .btn-whatsapp:hover { background: #1EBE5A; transform: translateY(-2px); }
 
-  /* ===== CONTACT ===== */
+  /* ===== CONTACT & LIVRAISON ===== */
   #contact {
     padding: 80px 40px;
     background: var(--beige);
@@ -589,7 +588,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
   }
   .contact-card {
@@ -607,9 +606,14 @@
   .delivery-zone {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
+    align-items: flex-start;
+    padding: 14px 0;
     border-bottom: 1px solid var(--beige);
   }
+  .delivery-info { flex: 1; }
+  .delivery-route { font-weight: 600; color: var(--text); }
+  .delivery-detail { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+  .delivery-price { font-weight: 700; color: var(--sage); }
   .whatsapp-big {
     display: flex;
     align-items: center;
@@ -622,6 +626,14 @@
     border-radius: 50px;
     font-weight: 600;
     margin-top: 24px;
+  }
+  .contact-numbers {
+    margin: 20px 0;
+  }
+  .contact-number {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 8px 0;
   }
   footer {
     background: var(--sage-dark);
@@ -681,7 +693,7 @@
   <div class="section-header">
     <div class="section-tag">Gamme 02</div>
     <h2 class="section-title">Savon <em>Palmida</em></h2>
-    <p class="section-desc">Rectangulaire (petit) · Carré (grand) · Détail ou carton (prix dégressif)</p>
+    <p class="section-desc">Petit format (125 FCFA) · Grand format (300 FCFA) · Détail ou carton</p>
     <div class="section-line"></div>
   </div>
   <div class="palmida-grid" id="palmida-grid"></div>
@@ -697,8 +709,8 @@
     <div class="why-card"><div class="why-icon">🌿</div><div class="why-title">100% Naturel</div><div class="why-text">Sans produits chimiques, idéal pour les peaux sensibles.</div></div>
     <div class="why-card"><div class="why-icon">🎨</div><div class="why-title">5 Parfums</div><div class="why-text">Miel, Aloé, Rose, Lagon, Transparent : à chacun sa senteur.</div></div>
     <div class="why-card"><div class="why-icon">💰</div><div class="why-title">Prix Doux</div><div class="why-text">1L à 500 FCFA. Palmida dès 100 FCFA/unité en gros.</div></div>
-    <div class="why-card"><div class="why-icon">📦</div><div class="why-title">Gros & Détail</div><div class="why-text">Palmida : à l'unité ou par carton (x60, x100, x200). Parfait pour revente.</div></div>
-    <div class="why-card"><div class="why-icon">🚚</div><div class="why-title">Livraison Bénin</div><div class="why-text">Cotonou, Porto-Novo, Parakou, Abomey-Calavi et partout au Bénin.</div></div>
+    <div class="why-card"><div class="why-icon">📦</div><div class="why-title">Gros & Détail</div><div class="why-text">Palmida : à l'unité ou par carton (x60, x100, x200).</div></div>
+    <div class="why-card"><div class="why-icon">🚚</div><div class="why-title">Livraison Bénin</div><div class="why-text">Cotonou, Calavi, Akpakpa, Porto-Novo et partout au Bénin.</div></div>
     <div class="why-card"><div class="why-icon">💬</div><div class="why-title">Commande WhatsApp</div><div class="why-text">Cliquez, validez, recevez. Paiement à la livraison.</div></div>
   </div>
 </section>
@@ -706,16 +718,51 @@
 <section id="contact">
   <div class="section-header"><div class="section-tag">Livraison & Contact</div><h2 class="section-title">Commander & <em>Livraison</em></h2><div class="section-line"></div></div>
   <div class="contact-grid">
-    <div class="contact-card"><div class="contact-card-title">🚚 Zones de livraison</div>
-      <div class="delivery-zone"><span>📍 Cotonou</span><span>500 FCFA</span></div>
-      <div class="delivery-zone"><span>📍 Porto-Novo</span><span>1 000 FCFA</span></div>
-      <div class="delivery-zone"><span>📍 Abomey-Calavi</span><span>700 FCFA</span></div>
-      <div class="delivery-zone"><span>📍 Parakou & intérieur</span><span>1 500 FCFA</span></div>
-      <div class="delivery-zone"><span>📍 Reste du Bénin</span><span>Sur devis</span></div>
+    <div class="contact-card">
+      <div class="contact-card-title">🚚 Tarifs de livraison</div>
+      <div class="delivery-zone">
+        <div class="delivery-info">
+          <div class="delivery-route">📍 Calavi → Cotonou</div>
+          <div class="delivery-detail">Livraison directe</div>
+        </div>
+        <div class="delivery-price">1 000 FCFA</div>
+      </div>
+      <div class="delivery-zone">
+        <div class="delivery-info">
+          <div class="delivery-route">📍 Calavi → Akpakpa</div>
+          <div class="delivery-detail">Livraison directe</div>
+        </div>
+        <div class="delivery-price">1 500 FCFA</div>
+      </div>
+      <div class="delivery-zone">
+        <div class="delivery-info">
+          <div class="delivery-route">📍 Calavi → Porto-Novo</div>
+          <div class="delivery-detail">Livreur (1 000 FCFA) + Nonvi voyage (1 300 FCFA)</div>
+        </div>
+        <div class="delivery-price">2 300 FCFA</div>
+      </div>
+      <div class="delivery-zone">
+        <div class="delivery-info">
+          <div class="delivery-route">📍 Autres destinations</div>
+          <div class="delivery-detail">Contactez-nous pour un devis</div>
+        </div>
+        <div class="delivery-price">Sur devis</div>
+      </div>
     </div>
-    <div class="contact-card"><div class="contact-card-title">📞 Nous contacter</div>
-      <div><strong>+229 01 90 73 57 21</strong><br>+229 01 69 63 91 06<br>+229 01 62 33 53 59<br>Lundi – Samedi · 8h – 18h</div>
-      <a href="https://wa.me/22990735721" target="_blank" class="whatsapp-big">📱 Commander sur WhatsApp</a>
+    <div class="contact-card">
+      <div class="contact-card-title">📞 Nous contacter</div>
+      <div class="contact-numbers">
+        <div class="contact-number">📱 <strong>+229 01 90 73 57 21</strong></div>
+        <div class="contact-number">📱 +229 01 69 63 91 06</div>
+        <div class="contact-number">📱 +229 01 62 33 53 59</div>
+      </div>
+      <div style="margin: 15px 0; padding: 12px 0; border-top: 1px solid var(--beige); border-bottom: 1px solid var(--beige);">
+        <strong>🕐 Horaires</strong><br>
+        Lundi – Samedi · 8h00 – 18h00
+      </div>
+      <a href="https://wa.me/22990735721" target="_blank" class="whatsapp-big">
+        📱 Commander sur WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -750,15 +797,13 @@ const LIQUID_VOLUMES = [
   { label: '1 L', price: 500 }
 ];
 
-// Palmida : petit = rectangulaire (300f), grand = carré (500f)
-// Gros : cartons x60, x100, x200
-const PALMIDA_SHAPES = [
+// Palmida : Petit et Grand (plus de distinction rectangulaire/carré)
+const PALMIDA_TYPES = [
   { 
     id: 'petit', 
-    name: 'Rectangulaire', 
-    type: 'petit',
+    name: 'Petit format', 
     emoji: '🧼', 
-    detailPrice: 300,
+    detailPrice: 125,
     bulkOptions: [
       { qty: 60, price: 6000, unitPrice: 100, label: 'Carton de 60' },
       { qty: 100, price: 10000, unitPrice: 100, label: 'Carton de 100' },
@@ -767,10 +812,9 @@ const PALMIDA_SHAPES = [
   },
   { 
     id: 'grand', 
-    name: 'Carré', 
-    type: 'grand',
+    name: 'Grand format', 
     emoji: '🔲', 
-    detailPrice: 500,
+    detailPrice: 300,
     bulkOptions: [
       { qty: 60, price: 15000, unitPrice: 250, label: 'Carton de 60' },
       { qty: 100, price: 25000, unitPrice: 250, label: 'Carton de 100' },
@@ -832,7 +876,7 @@ function renderPalmida() {
   const grid = document.getElementById('palmida-grid');
   if (!grid) return;
   grid.innerHTML = '';
-  PALMIDA_SHAPES.forEach(shape => {
+  PALMIDA_TYPES.forEach(shape => {
     const card = document.createElement('div');
     card.className = 'palmida-card';
     const selected = palmidaSelections[shape.id];
@@ -847,7 +891,7 @@ function renderPalmida() {
       `;
     } else {
       optionsHtml = shape.bulkOptions.map(opt => `
-        <div class="option-row ${selected.option === opt.qty ? 'selected' : ''}" data-shape="${shape.id}" data-opt="${opt.qty}" data-price="${opt.price}" data-label="${opt.label}" data-qty="${opt.qty}" data-unitprice="${opt.unitPrice}">
+        <div class="option-row ${selected.option === opt.qty ? 'selected' : ''}" data-shape="${shape.id}" data-opt="${opt.qty}" data-price="${opt.price}" data-label="${opt.label}" data-qty="${opt.qty}">
           <div><div class="option-name">${opt.label}</div><div class="option-sub">${opt.qty} savons (${opt.unitPrice} FCFA/unité)</div></div>
           <div class="option-price">${opt.price.toLocaleString('fr-FR')} FCFA</div>
         </div>
@@ -874,7 +918,7 @@ function renderPalmida() {
 }
 
 function attachOptionEvents() {
-  PALMIDA_SHAPES.forEach(shape => {
+  PALMIDA_TYPES.forEach(shape => {
     const container = document.getElementById(`options-${shape.id}`);
     if (!container) return;
     const rows = container.querySelectorAll('.option-row');
@@ -899,7 +943,7 @@ function setPalmidaType(shapeId, type) {
   if (type === 'detail') {
     palmidaSelections[shapeId] = { type: 'detail', option: null };
   } else {
-    const shape = PALMIDA_SHAPES.find(s => s.id === shapeId);
+    const shape = PALMIDA_TYPES.find(s => s.id === shapeId);
     const defaultQty = shape.bulkOptions[0].qty;
     palmidaSelections[shapeId] = { type: 'bulk', option: defaultQty };
   }
@@ -908,7 +952,7 @@ function setPalmidaType(shapeId, type) {
 
 function addPalmidaToCart(shapeId, shapeName, emoji) {
   const sel = palmidaSelections[shapeId];
-  const shape = PALMIDA_SHAPES.find(s => s.id === shapeId);
+  const shape = PALMIDA_TYPES.find(s => s.id === shapeId);
   
   if (sel.type === 'detail') {
     addToCart('palmida', `${shapeId}-detail`, shapeName, `À l'unité`, shape.detailPrice, emoji, 1);
@@ -1018,7 +1062,10 @@ function sendWhatsApp() {
   cart.forEach(item => {
     msg += `• ${item.qty}x ${item.name} – ${item.variant} – ${(item.qty * item.price).toLocaleString('fr-FR')} FCFA\n`;
   });
-  msg += `\n*Total : ${total.toLocaleString('fr-FR')} FCFA*\n\nMon adresse de livraison : `;
+  msg += `\n*Total produits : ${total.toLocaleString('fr-FR')} FCFA*\n\n`;
+  msg += `📍 Mon adresse de livraison : \n`;
+  msg += `📞 Mon téléphone : \n\n`;
+  msg += `Merci de confirmer ma commande 🙏`;
   window.open(`https://wa.me/22990735721?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
@@ -1030,7 +1077,6 @@ function initColorSelector() {
     LIQUID_COLORS.map(c => `<button class="color-btn" onclick="filterLiquid('${c.id}', this)"><div class="color-dot" style="background:${c.color};"></div> ${c.name}</button>`).join('');
 }
 
-// Lancement au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
   initColorSelector();
   renderLiquid();
